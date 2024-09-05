@@ -1,10 +1,12 @@
 import axios from 'axios';
 import { Message } from '@arco-design/web-react';
-import { getAccessToken } from '@/utils/accessToken';
+import { getAccessToken, removeAccessToken } from '@/utils/accessToken';
 import { tansParams, localStorageGet, localStorageSet } from '@/utils/index';
 import apiConfig from '@/config/net.config';
 
 const { baseURL, invalidCode, requestTimeout, contentType } = apiConfig;
+// 是否显示重新登录
+export const isRelogin = { show: false };
 
 // 创建axios实例
 const service = axios.create({
@@ -83,7 +85,8 @@ service.interceptors.response.use(
       return res.data;
     }
     if (code === invalidCode || code === 401) {
-      window.location.href = '/login';
+      removeAccessToken();
+      window.location.href = '/monitoring/';
       return Message.error('登录状态已过期，请重新登录');
     }
     if (code === 500) {

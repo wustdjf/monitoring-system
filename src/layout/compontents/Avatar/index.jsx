@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Menu, Avatar, Dropdown } from '@arco-design/web-react';
 import { IconUser, IconPoweroff } from '@arco-design/web-react/icon';
-import { logout } from '@/store/actions/user';
+import { onLogout } from '@/store/actions/user';
 
 export default function AvatarCompontent() {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ export default function AvatarCompontent() {
   };
 
   const handleClickMenuItem = (key) => {
-    if (key === 'logout') dispatch(logout());
+    if (key === 'logout') dispatch(onLogout());
   };
   return (
     <Dropdown

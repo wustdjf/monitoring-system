@@ -14,6 +14,7 @@ export const getUserInfo = () =>
     method: 'get'
   });
 
+// 退出方法
 export const logout = () =>
   request({
     url: '/logout',

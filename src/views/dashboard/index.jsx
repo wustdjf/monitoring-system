@@ -1,21 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { Leafer, Rect } from 'leafer-ui';
+import styles from './index.module.less';
 
-import { Grid, Timeline } from '@arco-design/web-react';
-import style from './index.module.less';
+export default function App() {
+  useEffect(() => {
+    const leafer = new Leafer({ view: 'leafer-view' });
 
-import { getWorkplace } from '@/api/workplace';
-import useLocale from '@/utils/useLocale';
+    const rect = new Rect({
+      x: 100,
+      y: 100,
+      width: 200,
+      height: 200,
+      fill: '#32cd79',
+      cornerRadius: [50, 80, 0, 80],
+      draggable: true
+    });
 
-const { Row, Col } = Grid;
-const TimelineItem = Timeline.Item;
+    leafer.add(rect);
 
-export default function WorkplaceCompontent() {
-  const [loading, setLoading] = useState(true);
-  const t = useLocale();
+    return () => {
+      leafer.destroy(); // 开发环境useEffect会执行2次，必须及时销毁
+    };
+  });
 
-  const onGetWorkplace = () => {};
-
-  useEffect(() => {}, []);
-
-  return <div>仪表图</div>;
+  return <div id="leafer-view" className={styles.leaferView} />;
 }

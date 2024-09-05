@@ -14,7 +14,7 @@ import {
   SET_ACCESS_TOKEN
 } from '@/store/action_types';
 
-import { login, getUserInfo } from '@/api/user';
+import { login, getUserInfo, logout } from '@/api/user';
 import { setRoutersHandler } from './router';
 
 import { setting } from '@/config/setting';
@@ -87,7 +87,9 @@ export const loginHandler = (payload) => async (dispatch) => {
  * @description 退出登录
  * @returns
  */
-export const logout = () => async (dispatch) => {
+export const onLogout = () => async (dispatch) => {
+  const data = await logout();
+  console.log('data', data);
   dispatch(setPermission([]));
   dispatch(setAccessTokenHandler({ accessToken: '' }));
   dispatch({
