@@ -8,7 +8,7 @@ const path = require('path');
 const isDev = process.env.NODE_ENV === 'development';
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/monitoring',
+  base: '/monitoring/',
   plugins: [
     react(),
     vitePluginForArco(),
@@ -44,6 +44,7 @@ export default defineConfig({
     // },
   },
   build: {
+    minify: 'terser',
     terserOptions: {
       compress: {
         keep_infinity: true,
