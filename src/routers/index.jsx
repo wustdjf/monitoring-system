@@ -1,6 +1,5 @@
 import React, { lazy, Suspense } from 'react';
 import { useRoutes } from 'react-router-dom';
-import { IconDashboard } from '@arco-design/web-react/icon';
 
 import LayoutPage from '@/layout';
 import EmptyLayout from '@/layout/emptyLayout';
@@ -11,6 +10,7 @@ import RequireAuth from '@/compontents/Auth';
 const load = (children) => <Suspense fallback={<LoadingComponent />}>{children}</Suspense>;
 
 const Dashboard = lazy(() => import('@/views/dashboard'));
+const Room = lazy(() => import('@/views/room'));
 
 const Login = lazy(() => import('@/views/login'));
 
@@ -50,6 +50,11 @@ const routeList = [
         index: true,
         key: 'dashboard',
         element: load(<Dashboard />)
+      },
+      {
+        path: 'room',
+        key: 'room',
+        element: load(<Room />)
       }
     ]
   },

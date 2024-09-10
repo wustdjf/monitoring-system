@@ -17,7 +17,7 @@ const service = axios.create({
   }
 });
 
-// request拦截器
+// request请求拦截器
 service.interceptors.request.use(
   (config) => {
     // 是否需要设置 token
@@ -73,7 +73,7 @@ service.interceptors.request.use(
   }
 );
 
-// 响应拦截器
+// response响应拦截器
 service.interceptors.response.use(
   (res) => {
     // 未设置状态码则默认成功状态
