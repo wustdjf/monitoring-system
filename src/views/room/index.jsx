@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Leafer, Box, Ellipse, Line, Rect } from 'leafer-ui';
 import styles from './index.module.less';
-import { roomList } from '@/views/dashboard/room';
+import { roomList } from '@/views/room/room';
 
 export default function App() {
   useEffect(() => {
@@ -11,8 +11,8 @@ export default function App() {
     const rectRoom = new Rect({
       x: 90,
       y: 90,
-      width: 900,
-      height: 1020,
+      width: 1320,
+      height: 800,
       fill: '#ffffff',
       cornerRadius: 0,
       strokeWidth: 1,
@@ -67,7 +67,7 @@ export default function App() {
 
     // 中间文案
     const centerBox = new Box({
-      x: 350,
+      x: 560,
       y: 460,
       width: 200,
       height: 200,
@@ -75,7 +75,7 @@ export default function App() {
       children: [
         {
           tag: 'Text',
-          text: '留样室',
+          text: '稳定性实验室',
           fill: 'black',
           fontSize: 20,
           padding: [10, 20],
@@ -84,10 +84,19 @@ export default function App() {
         },
         {
           tag: 'Text',
-          text: '02-229',
+          text: 'Stability Laboratory Room',
+          fill: 'black',
+          fontSize: 16,
+          padding: [35, 20],
+          textAlign: 'left',
+          verticalAlign: 'top'
+        },
+        {
+          tag: 'Text',
+          text: '02-230',
           fill: 'black',
           fontSize: 14,
-          padding: [40, 20],
+          padding: [55, 20],
           textAlign: 'left',
           verticalAlign: 'top'
         }
@@ -97,14 +106,14 @@ export default function App() {
 
     // 绘制大门
     const lineGate = new Line({
-      points: [540, 990, 540, 1110, 780, 1110, 780, 990],
+      points: [540, 770, 540, 890, 780, 890, 780, 770],
       strokeWidth: 1,
       stroke: 'black'
     });
     leafer.add(lineGate);
     const leftGate = new Ellipse({
       x: 420,
-      y: 990,
+      y: 770,
       width: 240,
       height: 240,
       startAngle: -90,
@@ -118,7 +127,7 @@ export default function App() {
     leafer.add(leftGate);
     const rightGate = new Ellipse({
       x: 660,
-      y: 990,
+      y: 770,
       width: 240,
       height: 240,
       startAngle: -180,
