@@ -38,25 +38,35 @@ git clone https://github.com/wustdjf/monitoring-system.git
 - 安装依赖
 
 ```sh
-yarn install
+pnpm install
 ```
 
 - 运行
 
 ```sh
-yarn dev
+pnpm run dev
 ```
 
 - 打包
 
 ```sh
-yarn build
+pnpm run build
 ```
 
 - 本地预览
 
 ```sh
-yarn preview
+pnpm run preview
+```
+
+- 如果不想使用 pnpm，请删除 `package.json` 文件中 `preinstall` 脚本后再进行安装
+
+```json
+{
+  "scripts": {
+    "preinstall": "npx only-allow pnpm" // 使用其他包管理工具（npm、yarn、cnpm等）请删除此命令
+  }
+}
 ```
 
 ## 浏览器支持

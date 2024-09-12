@@ -1,6 +1,10 @@
 const en_US = {
-  title: 'A system to monitor the temperature and humidity',
+  title: 'monitor temperature and humidity',
   dashboard: 'Dashboard',
-  monitoring: 'Monitoring'
+  monitoring: 'Monitoring',
+  // 菜单模块
+  'menu.dashboard': 'Dashboard',
+  'menu.dashboard.room1': 'First Room',
+  'menu.dashboard.room2': 'Second Room'
 };
 export default en_US;

@@ -1,9 +1,13 @@
 import { useEffect } from 'react';
 import { Leafer, Box, Ellipse, Line, Rect } from 'leafer-ui';
 import styles from './index.module.less';
-import { roomList } from '@/views/room/room';
+import { roomList } from '@/views/second-room/room';
+import store from '@/store';
 
 export default function App() {
+  const { collapsed } = store.getState().menuReducer;
+  console.log('routers', collapsed);
+
   useEffect(() => {
     const leafer = new Leafer({ view: 'leafer-view' });
 

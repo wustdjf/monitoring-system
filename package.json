@@ -8,10 +8,15 @@
     "email": "656578079@qq.com",
     "url": "https://github.com/wustdjf/monitoring-system"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wustdjf/monitoring-system.git"
+  },
   "scripts": {
     "dev": "cross-env NODE_ENV=development vite",
     "build": "cross-env NODE_ENV=production vite build",
-    "preview": "cross-env  vite preview",
+    "preinstall": "npx only-allow pnpm",
+    "preview": "cross-env vite preview",
     "install:husky": "husky install",
     "lint:eslint": "eslint \"**/*.{jsx,js}\" --fix",
     "lint:style": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
@@ -20,11 +25,14 @@
     "format": "prettier-eslint 'src/**/*.{js,jsx}' --write",
     "deploy-gh": "GH=1 bash deploy-gh.sh"
   },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  },
   "dependencies": {
     "@arco-design/color": "^0.4.0",
     "@arco-design/web-react": "^2.31.2",
     "axios": "^0.26.1",
-    "bizcharts": "^4.1.15",
     "js-cookie": "^3.0.1",
     "leafer-ui": "^1.0.2",
     "mockjs": "^1.1.0",

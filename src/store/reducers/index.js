@@ -1,6 +1,7 @@
 // 分别引入各个模块的reducer，可以优化不必每次都单独模块引入
 import userReducer from './user';
 import routerReducer from './router';
+import menuReducer from './menu';
 
 // 合并reducer
 function combineReducers(reducers) {
@@ -16,4 +17,4 @@ function combineReducers(reducers) {
 }
 
 // 导出reducer
-export default combineReducers({ userReducer, routerReducer });
+export default combineReducers({ userReducer, routerReducer, menuReducer });

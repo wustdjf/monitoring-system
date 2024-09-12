@@ -37,7 +37,7 @@ export default function Login() {
     await dispatch(loginHandler({ ...formItem, uuid }));
     const { accessToken } = store.getState().userReducer;
     if (accessToken) {
-      navigate('/dashboard');
+      navigate('/dashboard/room-one');
     }
   };
   return (

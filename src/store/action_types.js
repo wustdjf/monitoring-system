@@ -19,3 +19,6 @@ export const SET_FLAG = 'SET_FLAG';
 
 // 设置路由数据
 export const SET_ROUTERS = 'SET_ROUTERS';
+
+// 设置菜单打开还是关闭
+export const SET_MENU = 'SET_MENU';
