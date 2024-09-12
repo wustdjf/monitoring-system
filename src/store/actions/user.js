@@ -1,8 +1,3 @@
-/**
- * @description 用户模块action
- * @author hu-snail 1217437592@qq.com
- */
-
 // 引入action_type变量
 import { Notification, Message } from '@arco-design/web-react';
 import {

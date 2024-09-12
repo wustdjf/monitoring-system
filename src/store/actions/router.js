@@ -1,8 +1,3 @@
-/**
- * @description 用户模块action
- * @author hu-snail 1217437592@qq.com
- */
-
 import { SET_ROUTERS } from '@/store/action_types';
 import { getRouters } from '@/api/routers';
 

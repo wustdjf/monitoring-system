@@ -1,4 +1,4 @@
-<div align="center"><img height="120px" src="https://github.com/hu-snail/arco-admin-template/blob/master/src/assets/logo/logo.svg"/></div>
+<div align="center"><img height="120px" src="https://github.com/wustdjf/monitoring-system/blob/master/src/assets/logo/logo.svg"/></div>
 
 <h1 align="center">温湿度监控系统</h1>
 
